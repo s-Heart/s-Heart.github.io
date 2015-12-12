@@ -95,37 +95,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="u6CE8_u91CA"><a href="#u6CE8_u91CA" class="headerlink" title="注释"></a>注释</h2><p>Java 程序有两类注释：<br>实现注释(implementation comments)和文档注释(document comments)。<br>实现注释是使用/<em>…</em>/和//界定的注释。<br>文档注释(被称为”doc comments”)由/<em>*…</em>/界定。文档注释可以通过javadoc 工具转换成HTML 文件。</p>
-<p>1.类注释<br>每一个类都要包含文档注释,以说明当前类的功能<br>　　a)类注释模板设置步骤:<br>　　　Android Studio -&gt; File -&gt; Settings -&gt; 左上角搜索 File and Code Templates -&gt; 右边面板选择Class -&gt; 复制如下模板 -&gt; 保存(Apply)  </p>
-<pre><code>#if?${PACKAGE_NAME} &amp;&amp; ${PACKAGE_NAME} !=?&quot;)package?{PACKAGE_NAME};#end
-
-/**  
-* Author: ${USER}(${USER}@qq.com)  
-* Date: ${YEAR}-${MONTH}-${DAY}  
-* Time: ${HOUR}:${MINUTE}  
-* Description: FIXME  
-*/  
-public class?{NAME} {  
-}
-</code></pre><p>注意：这里所设置的注释模板只有在创建新的类的时候才会自动生成出现。若想在自己的代码中快速设置注释还需要使用第二种设置方式<br>　　b)自定义模板设置步骤(重要):<br>　　　Android Studio -&gt; File -&gt; Settings -&gt; 左上角搜索 Live Templates -&gt; 右边面板选择Add(右侧”+”号) -&gt; 选择Template Group创建模板组-&gt; 输入组名 custom comment -&gt; 点击新建的组 -&gt;点击”+”..Live Template-&gt; 复制如下模板到Template text编辑框内  </p>
-<pre><code>/**  
-* Author: $USER$($USER$@qq.com)
-* Date: $DATE$
-* Time: $TIME$
-* Description:
-*/
-</code></pre><p>-&gt; 当模板配置如下图保存(Apply)<br><img src="http://i.imgur.com/VJUkisC.png" alt=""></p>
-<p>custom comment组中还可定义field comment(fc)按照类自定义注释模板自行添加,原理类似.<br>配置完后在类或成员变量的上方输入自定义快捷键,回车即可使用.  </p>
-<p>另:不建议在一个源文件中定义多个类,尽量把类分布到对应目录结构中,依赖性极强的类除外.<br>例如:JobInfo.Builder-&gt;/<em>* Builder class for constructing {@link JobInfo} objects. </em>/</p>
-<p>2.方法注释<br>不要求所有方法都添加注释,但容易产生歧义或功能不清的方法需添加文档注释。<br>Tips:注释有一种快捷操作供参考:<br>　　Android Studio -&gt; File -&gt; Settings -&gt; 左上角搜索Fix doc comment-&gt;双击后选择add keyboard shortcut -&gt;自定义快捷键(建议Alt+Shift+K)-&gt;OK<br>        将光标放到方法声明或实现内(成员变量放在变量名上)输入自定义快捷键即可.</p>
-<p>3.类成员变量和常量注释<br>类成员变量和常量需要使用文档注释,通常情况注释写在声明的上方</p>
-<p>4.其他注释<br>方法内部的注释 如果需要多行 使用/<em>…… </em>/形式，如果为单行是用//……形式的注释。不要再方法内部使用 java doc 形式的注释“/<strong>……</strong>/”.<br>方法内部注释为了不影响上下文间的逻辑连贯性,可以全在行尾添加注释,也可全在行上方添加注释,但不要两个混着使用而降低代码可读性.</p>
-
+        <h2 id="u6CE8_u91CA"><a href="#u6CE8_u91CA" class="headerlink" title="注释"></a>注释</h2><p>Java 程序有两类注释：<br>实现注释(implementation comments)和文档注释(document comments)。<br>实现注释是使用/<em>…</em>/和//界定的注释。<br>文档注释(被称为”doc comments”)由/<em>*…</em>/界定。文档注释可以通过javadoc 工具转换成HTML 文件。<br>
+        
+          <p class="article-more-link">
+            <a href="/2015/12/12/Android代码规范/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://shishaojie.site/2015/12/12/Android代码规范/" data-id="cii3aje7g00008sdupd696929" class="article-share-link" data-share="baidu" data-title="Android 代码规范">分享到</a>
+        <a data-url="http://shishaojie.site/2015/12/12/Android代码规范/" data-id="cii3bswsh0000goduzkxnduak" class="article-share-link" data-share="baidu" data-title="Android 代码规范">分享到</a>
       
 
       
@@ -261,6 +241,9 @@ public class?{NAME} {
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
 
 
 
