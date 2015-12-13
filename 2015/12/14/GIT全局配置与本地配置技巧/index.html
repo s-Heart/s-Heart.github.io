@@ -6,19 +6,16 @@
   
   <title>GIT全局配置与本地配置技巧 | tony&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="git用来做版本控制还是非常好用的，当安装完git之后，通常会有两个配置文件需要你修改，一个是全局配置文件（windows路径为：USER_HOME/.gitconfig）,另一个是各仓库的配置文件（位于各仓库根目录下.git/config）.  
-全局配置文件故名思议，就是说不管你提交到哪个仓库，此配置文件中的内容都是通用的，所以习惯用命令行提交的同学一个个字母敲多少有些费劲，这时就可以在这个全">
+  <meta name="description" content="git用来做版本控制还是非常好用的，当安装完git之后，通常会有两个配置文件需要你修改，一个是全局配置文件（windows路径为：USER_HOME/.gitconfig）,另一个是各仓库的配置文件（位于各仓库根目录下.git/config）.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GIT全局配置与本地配置技巧">
 <meta property="og:url" content="http://shishaojie.site/2015/12/14/GIT全局配置与本地配置技巧/index.html">
 <meta property="og:site_name" content="tony's blog">
-<meta property="og:description" content="git用来做版本控制还是非常好用的，当安装完git之后，通常会有两个配置文件需要你修改，一个是全局配置文件（windows路径为：USER_HOME/.gitconfig）,另一个是各仓库的配置文件（位于各仓库根目录下.git/config）.  
-全局配置文件故名思议，就是说不管你提交到哪个仓库，此配置文件中的内容都是通用的，所以习惯用命令行提交的同学一个个字母敲多少有些费劲，这时就可以在这个全">
-<meta property="og:updated_time" content="2015-12-13T16:53:03.628Z">
+<meta property="og:description" content="git用来做版本控制还是非常好用的，当安装完git之后，通常会有两个配置文件需要你修改，一个是全局配置文件（windows路径为：USER_HOME/.gitconfig）,另一个是各仓库的配置文件（位于各仓库根目录下.git/config）.">
+<meta property="og:updated_time" content="2015-12-13T16:54:29.383Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GIT全局配置与本地配置技巧">
-<meta name="twitter:description" content="git用来做版本控制还是非常好用的，当安装完git之后，通常会有两个配置文件需要你修改，一个是全局配置文件（windows路径为：USER_HOME/.gitconfig）,另一个是各仓库的配置文件（位于各仓库根目录下.git/config）.  
-全局配置文件故名思议，就是说不管你提交到哪个仓库，此配置文件中的内容都是通用的，所以习惯用命令行提交的同学一个个字母敲多少有些费劲，这时就可以在这个全">
+<meta name="twitter:description" content="git用来做版本控制还是非常好用的，当安装完git之后，通常会有两个配置文件需要你修改，一个是全局配置文件（windows路径为：USER_HOME/.gitconfig）,另一个是各仓库的配置文件（位于各仓库根目录下.git/config）.">
   
     <link rel="alternative" href="/atom.xml" title="tony&#39;s blog" type="application/atom+xml">
   
@@ -97,7 +94,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>git用来做版本控制还是非常好用的，当安装完git之后，通常会有两个配置文件需要你修改，一个是全局配置文件（windows路径为：USER_HOME/.gitconfig）,另一个是各仓库的配置文件（位于各仓库根目录下.git/config）.  </p>
+        <p>git用来做版本控制还是非常好用的，当安装完git之后，通常会有两个配置文件需要你修改，一个是全局配置文件（windows路径为：USER_HOME/.gitconfig）,另一个是各仓库的配置文件（位于各仓库根目录下.git/config）.<br><a id="more"></a></p>
 <h3 id="u5168_u5C40_u914D_u7F6E_u6587_u4EF6"><a href="#u5168_u5C40_u914D_u7F6E_u6587_u4EF6" class="headerlink" title="全局配置文件"></a>全局配置文件</h3><p>故名思议，就是说不管你提交到哪个仓库，此配置文件中的内容都是通用的，所以习惯用命令行提交的同学一个个字母敲多少有些费劲，这时就可以在这个全局配置文件中来配置你经常用的命令简写。<br>例如我下面的全局配置文件内容基本就涵盖了经常用到的命令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[filter &#34;lfs&#34;]&#10;&#9;clean = git lfs clean %f&#10;&#9;smudge = git lfs smudge %f&#10;&#9;required = true&#10;[user]&#10;&#9;name = shishaojie&#10;&#9;email = 110618445@qq.com&#10;[alias]&#10;    st = status&#10;    ci = commit&#10;    co = checkout&#10;    br = branch&#10;    al = add .&#10;    unstage = reset HEAD --</span><br></pre></td></tr></table></figure></p>
 <p>在使用时直接<code>git st</code>.</p>
 <h3 id="u672C_u5730_u914D_u7F6E_u6587_u4EF6"><a href="#u672C_u5730_u914D_u7F6E_u6587_u4EF6" class="headerlink" title="本地配置文件"></a>本地配置文件</h3><p>每对一个项目进行版本控制时，项目的根目录都会生成一个.git的文件夹，这个文件夹里就包含了在与远程仓库交互时需要的一些信息。<br>例如<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">	repositoryformatversion = <span class="number">0</span></span><br><span class="line">	filemode = <span class="keyword">false</span></span><br><span class="line">	bare = <span class="keyword">false</span></span><br><span class="line">	logallrefupdates = <span class="keyword">true</span></span><br><span class="line">	symlinks = <span class="keyword">false</span></span><br><span class="line">	ignorecase = <span class="keyword">true</span></span><br><span class="line">	hideDotFiles = dotGitOnly</span><br><span class="line">[remote <span class="string">"origin"</span>]</span><br><span class="line">	url = <span class="comment">#这里填写远程仓库的url地址</span></span><br><span class="line">	fetch = +refs/heads/*<span class="symbol">:refs/remotes/origin/*</span></span><br><span class="line">[branch <span class="string">"master"</span>]</span><br><span class="line">	remote = origin</span><br><span class="line">	merge = refs/heads/master</span><br></pre></td></tr></table></figure></p>
