@@ -6,19 +6,28 @@
   
   <title>多线程概念介绍 | tony&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="程序结束当所有线程都结束时,程序也就结束了.不过,在判断是否结束时,并不包括daemon thread.换句话说,即使daemon thread还在,但只要非daemon thread的线程都已经结束,程序即以结束.daemon thread是指在产生线程时,以setDaemon方法设置其为daemon thread的线程.  
-Thread类和Runnable接口Thread类本身也实现了Run">
+  <meta name="description" content="程序结束
+当所有线程都结束时,程序也就结束了.不过,在判断是否结束时,并不包括daemon thread.换句话说,即使daemon thread还在,但只要非daemon thread的线程都已经结束,程序即以结束.daemon thread是指在产生线程时,以setDaemon方法设置其为daemon thread的线程.  
+
+Thread类和Runnable接口
+Thread类本身也实现了">
 <meta property="og:type" content="article">
 <meta property="og:title" content="多线程概念介绍">
 <meta property="og:url" content="http://shishaojie.site/2015/12/22/多线程简介/index.html">
 <meta property="og:site_name" content="tony's blog">
-<meta property="og:description" content="程序结束当所有线程都结束时,程序也就结束了.不过,在判断是否结束时,并不包括daemon thread.换句话说,即使daemon thread还在,但只要非daemon thread的线程都已经结束,程序即以结束.daemon thread是指在产生线程时,以setDaemon方法设置其为daemon thread的线程.  
-Thread类和Runnable接口Thread类本身也实现了Run">
-<meta property="og:updated_time" content="2015-12-22T09:54:58.150Z">
+<meta property="og:description" content="程序结束
+当所有线程都结束时,程序也就结束了.不过,在判断是否结束时,并不包括daemon thread.换句话说,即使daemon thread还在,但只要非daemon thread的线程都已经结束,程序即以结束.daemon thread是指在产生线程时,以setDaemon方法设置其为daemon thread的线程.  
+
+Thread类和Runnable接口
+Thread类本身也实现了">
+<meta property="og:updated_time" content="2015-12-22T10:00:51.164Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多线程概念介绍">
-<meta name="twitter:description" content="程序结束当所有线程都结束时,程序也就结束了.不过,在判断是否结束时,并不包括daemon thread.换句话说,即使daemon thread还在,但只要非daemon thread的线程都已经结束,程序即以结束.daemon thread是指在产生线程时,以setDaemon方法设置其为daemon thread的线程.  
-Thread类和Runnable接口Thread类本身也实现了Run">
+<meta name="twitter:description" content="程序结束
+当所有线程都结束时,程序也就结束了.不过,在判断是否结束时,并不包括daemon thread.换句话说,即使daemon thread还在,但只要非daemon thread的线程都已经结束,程序即以结束.daemon thread是指在产生线程时,以setDaemon方法设置其为daemon thread的线程.  
+
+Thread类和Runnable接口
+Thread类本身也实现了">
   
     <link rel="alternative" href="/atom.xml" title="tony&#39;s blog" type="application/atom+xml">
   
@@ -97,11 +106,21 @@ Thread类和Runnable接口Thread类本身也实现了Run">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="u7A0B_u5E8F_u7ED3_u675F"><a href="#u7A0B_u5E8F_u7ED3_u675F" class="headerlink" title="程序结束"></a>程序结束</h3><p>当所有线程都结束时,程序也就结束了.不过,在判断是否结束时,并不包括daemon thread.换句话说,即使daemon thread还在,但只要非daemon thread的线程都已经结束,程序即以结束.<br>daemon thread是指在产生线程时,以setDaemon方法设置其为daemon thread的线程.  </p>
-<h3 id="Thread_u7C7B_u548CRunnable_u63A5_u53E3"><a href="#Thread_u7C7B_u548CRunnable_u63A5_u53E3" class="headerlink" title="Thread类和Runnable接口"></a>Thread类和Runnable接口</h3><p>Thread类本身也实现了Runnable接口,也有run方法.只不过Thread类的run方法主体里是空的,没有执行任何部分.Thread类的run方法通常都是被子类覆盖（override）.  </p>
-<h3 id="u8BE5_u600E_u4E48_u5524_u9192_u5462_uFF1F"><a href="#u8BE5_u600E_u4E48_u5524_u9192_u5462_uFF1F" class="headerlink" title="该怎么唤醒呢？"></a>该怎么唤醒呢？</h3><p>如果是要“半路唤醒”被Thread.sleep暂停的线程,则可以利用interrupt方法.  </p>
-<h3 id="u7EBF_u7A0B_u7684_u5171_u4EAB_u4E92_u65A5"><a href="#u7EBF_u7A0B_u7684_u5171_u4EAB_u4E92_u65A5" class="headerlink" title="线程的共享互斥"></a>线程的共享互斥</h3><p>例如,当某个线程正在执行这个部分时,则限制其他线程不可执行此部分.这种像是交通管制的操作通常称为<strong>共享互斥</strong>或<strong>互斥控制</strong>.java语言在处理线程的共享互斥时,会使用到关键字synchronized.<br><strong>注</strong>:<strong>共享</strong>指的是资源共享,这里的资源指实例或类对象;<strong>互斥</strong>指的是多个线程访问同一资源的方法时,同一时间只能允许一个线程访问,其他线程需要排队.</p>
-<h3 id="synchronized__u65B9_u6CD5"><a href="#synchronized__u65B9_u6CD5" class="headerlink" title="synchronized 方法"></a>synchronized 方法</h3><p>当一个方法加上关键字synchronized声明之后,就可以让1个线程操作这个方法.”让1个线程操作”并不是说只能让一个线程操作,而是指一次只能让一个线程执行,这种方法称为<strong>synchronized方法</strong>,也叫<strong>同步方法</strong>.  </p>
+        <h3 id="u7A0B_u5E8F_u7ED3_u675F"><a href="#u7A0B_u5E8F_u7ED3_u675F" class="headerlink" title="程序结束"></a>程序结束</h3><blockquote>
+<p>当所有线程都结束时,程序也就结束了.不过,在判断是否结束时,并不包括daemon thread.换句话说,即使daemon thread还在,但只要非daemon thread的线程都已经结束,程序即以结束.<br>daemon thread是指在产生线程时,以setDaemon方法设置其为daemon thread的线程.  </p>
+</blockquote>
+<h3 id="Thread_u7C7B_u548CRunnable_u63A5_u53E3"><a href="#Thread_u7C7B_u548CRunnable_u63A5_u53E3" class="headerlink" title="Thread类和Runnable接口"></a>Thread类和Runnable接口</h3><blockquote>
+<p>Thread类本身也实现了Runnable接口,也有run方法.只不过Thread类的run方法主体里是空的,没有执行任何部分.Thread类的run方法通常都是被子类覆盖（override）.  </p>
+</blockquote>
+<h3 id="u8BE5_u600E_u4E48_u5524_u9192_u5462_uFF1F"><a href="#u8BE5_u600E_u4E48_u5524_u9192_u5462_uFF1F" class="headerlink" title="该怎么唤醒呢？"></a>该怎么唤醒呢？</h3><blockquote>
+<p>如果是要“半路唤醒”被Thread.sleep暂停的线程,则可以利用interrupt方法.  </p>
+</blockquote>
+<h3 id="u7EBF_u7A0B_u7684_u5171_u4EAB_u4E92_u65A5"><a href="#u7EBF_u7A0B_u7684_u5171_u4EAB_u4E92_u65A5" class="headerlink" title="线程的共享互斥"></a>线程的共享互斥</h3><blockquote>
+<p>例如,当某个线程正在执行这个部分时,则限制其他线程不可执行此部分.这种像是交通管制的操作通常称为<strong>共享互斥</strong>或<strong>互斥控制</strong>.java语言在处理线程的共享互斥时,会使用到关键字synchronized.<br><strong>注</strong>:<strong>共享</strong>指的是资源共享,这里的资源指实例或类对象;<strong>互斥</strong>指的是多个线程访问同一资源的方法时,同一时间只能允许一个线程访问,其他线程需要排队.</p>
+</blockquote>
+<h3 id="synchronized__u65B9_u6CD5"><a href="#synchronized__u65B9_u6CD5" class="headerlink" title="synchronized 方法"></a>synchronized 方法</h3><blockquote>
+<p>当一个方法加上关键字synchronized声明之后,就可以让1个线程操作这个方法.”让1个线程操作”并不是说只能让一个线程操作,而是指一次只能让一个线程执行,这种方法称为<strong>synchronized方法</strong>,也叫<strong>同步方法</strong>.  </p>
+</blockquote>
 <ul>
 <li><p>当1个线程正在执行某个实例的set方法时,其他线程就不能执行<strong>同一实例</strong>的set或get方法.欲执行的线程必须排队等候.  </p>
 </li>
@@ -112,7 +131,8 @@ Thread类和Runnable接口Thread类本身也实现了Run">
 <li><p>当锁定被释放后,刚才因为锁定而不得其门而入的多个线程便开始抢夺锁定,一定会有一个线程获得锁定,若等待的线程不止一个,没抢到的线程就得继续等候.</p>
 </li>
 </ul>
-<h3 id="synchronized__u963B_u6321"><a href="#synchronized__u963B_u6321" class="headerlink" title="synchronized 阻挡"></a>synchronized 阻挡</h3><p>如果只想启动方法里一部分的线程,而非启动整个方法时,则可使用synchronized阻挡.其格式如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>(表达式)&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="synchronized__u963B_u6321"><a href="#synchronized__u963B_u6321" class="headerlink" title="synchronized 阻挡"></a>synchronized 阻挡</h3><p>如果只想启动方法里一部分的线程,而非启动整个方法时,则可使用synchronized阻挡.其格式如下:  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>(表达式)&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>将获取锁定的实例传给”表达式”部分.</p>
 <ul>
 <li><p><strong><em>synchronized实例方法和synchronized阻挡</em></strong>  </p>
@@ -122,7 +142,9 @@ Thread类和Runnable接口Thread类本身也实现了Run">
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Something</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在功能上,他跟下面以synchronized阻挡为主的方法有异曲同工之妙</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Something</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span>(Something.class)&#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//换句话说,synchronized类方法是使用该类的类对象的锁定去做线程的共享互斥.</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="wait_set__u2013_u7EBF_u7A0B_u7684_u4F11_u606F_u5BA4"><a href="#wait_set__u2013_u7EBF_u7A0B_u7684_u4F11_u606F_u5BA4" class="headerlink" title="wait set –线程的休息室"></a>wait set –线程的休息室</h3><p>所有实例都有一个wait set,wait set是一个在执行该实例的wait方法时,操作停止的线程的集合.它有点类似线程的休息室,而且每个实例都会有.</p>
+<h3 id="wait_set__u2013_u7EBF_u7A0B_u7684_u4F11_u606F_u5BA4"><a href="#wait_set__u2013_u7EBF_u7A0B_u7684_u4F11_u606F_u5BA4" class="headerlink" title="wait set –线程的休息室"></a>wait set –线程的休息室</h3><blockquote>
+<p>所有实例都有一个wait set,wait set是一个在执行该实例的wait方法时,操作停止的线程的集合.它有点类似线程的休息室,而且每个实例都会有.</p>
+</blockquote>
 <h4 id="wait__u65B9_u6CD5"><a href="#wait__u65B9_u6CD5" class="headerlink" title="wait 方法"></a>wait 方法</h4><p>假设现在执行一个如下语句<code>obj.wait();</code><br>则目前的线程会暂时停止执行,进入实例obj的wait set里,这个操作称为:<strong>线程在obj上wait</strong>.</p>
 <h4 id="notify__u65B9_u6CD5"><a href="#notify__u65B9_u6CD5" class="headerlink" title="notify 方法"></a>notify 方法</h4><p>假设现在执行一个如下语句<code>obj.notify();</code><br>则实例obj的wait set里会唤醒一个线程,被唤醒的线程便退出wait set,之后的流程为:  </p>
 <ol>
@@ -135,7 +157,7 @@ Thread类和Runnable接口Thread类本身也实现了Run">
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://shishaojie.site/2015/12/22/多线程简介/" data-id="ciih7m4r10000loduzpuauq6k" class="article-share-link" data-share="baidu" data-title="多线程概念介绍">分享到</a>
+        <a data-url="http://shishaojie.site/2015/12/22/多线程简介/" data-id="ciih81hc7000060du1awvlztj" class="article-share-link" data-share="baidu" data-title="多线程概念介绍">分享到</a>
       
 
       
