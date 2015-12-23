@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://shishaojie.site/2015/12/23/多线程设计--生产者与消费者/index.html">
 <meta property="og:site_name" content="tony's blog">
 <meta property="og:description" content="按照惯例,依然先上共享资源的代码,之后逐个分析">
-<meta property="og:updated_time" content="2015-12-23T07:43:35.139Z">
+<meta property="og:updated_time" content="2015-12-23T07:48:00.010Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多线程设计--生产者与消费者">
 <meta name="twitter:description" content="按照惯例,依然先上共享资源的代码,之后逐个分析">
@@ -110,7 +110,7 @@
 <li><strong><em>Guarded Suspension</em></strong><br>get方法也使用了Guarded Suspension,警戒条件为<code>cakes.size() &gt; 0</code>,即桌子上的蛋糕总数大于0.  </li>
 <li><strong><em>notifyAll</em></strong><br>上面的代码已经把蛋糕拿走了,因为桌子的状态发生变化了,所以要执行notifyAll,把wait中的线程全部唤醒.  </li>
 </ul>
-<p>–</p>
+<hr>
 <h2 id="u8FDB_u9636_u8BF4_u660E_3AInterruptException_u5F02_u5E38"><a href="#u8FDB_u9636_u8BF4_u660E_3AInterruptException_u5F02_u5E38" class="headerlink" title="进阶说明:InterruptException异常"></a>进阶说明:InterruptException异常</h2><h3 id="u53EF_u80FD_u4F1A_u82B1_u4E00_u70B9_u65F6_u95F4_2C_u4F46_u662F_u53EF_u4EE5_u53D6_u6D88_u6389"><a href="#u53EF_u80FD_u4F1A_u82B1_u4E00_u70B9_u65F6_u95F4_2C_u4F46_u662F_u53EF_u4EE5_u53D6_u6D88_u6389" class="headerlink" title="可能会花一点时间,但是可以取消掉"></a>可能会花一点时间,但是可以取消掉</h3><p>习惯编写Java多线程程序以后,就会很习惯去注意方法的后面有没有接着throws InterruptException.当方法接着throws InterruptException时,表示这个方法内,可能会抛出InterruptException异常.<br>这通常告诉我们下面这两件事:  </p>
 <ul>
 <li>这是”需要花点时间”的方法</li>
