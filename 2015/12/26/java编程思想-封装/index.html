@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://shishaojie.site/2015/12/26/java编程思想-封装/index.html">
 <meta property="og:site_name" content="tony's blog">
 <meta property="og:description" content="封装在大致了解了封装概念之后,想要更进一步打好基础,就需要重新梳理自己的知识体系,将以前所忽略的知识补充进来,所以结合工作的经验与thinking in java中的系统知识,做一些举例说明来完善自己的知识体系.">
-<meta property="og:updated_time" content="2015-12-26T16:17:41.893Z">
+<meta property="og:updated_time" content="2015-12-26T18:47:41.164Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java编程思想-封装">
 <meta name="twitter:description" content="封装在大致了解了封装概念之后,想要更进一步打好基础,就需要重新梳理自己的知识体系,将以前所忽略的知识补充进来,所以结合工作的经验与thinking in java中的系统知识,做一些举例说明来完善自己的知识体系.">
@@ -106,8 +106,16 @@
 <p>假如现在<code>class A extands B</code>,B类中声明了protected成员,根据上面的条件,就可明白:</p>
 <ul>
 <li>C如果创建了A的实例,虽然A继承了B类,但C与B并不在同一个包下,因此无法访问B所声明的protected成员.</li>
-<li>D如果创建了A的实例,因为B与D在同一个包下,因此可以访问B的protected成员.  </li>
+<li>D如果创建了A的实例,因为B与D在同一个包下,因此可以访问B的protected成员.</li>
+<li>而A类内部对于B的protected成员有完全访问权.</li>
 </ul>
+<p><strong>所以总结:</strong>  </p>
+<ol>
+<li>private 谁都不能访问,子类都不行.</li>
+<li>protected <strong>子类本身(父类当中申明)</strong>或<strong>父类同包下的其他类</strong>可以访问(注意并列关系),受保护.</li>
+<li>无 只能同包下访问.</li>
+<li>public 哪里都可访问.</li>
+</ol>
 <blockquote>
 <p>安卓开发中最常用到的Activity(或者其它组件,这里只列举Activity),用多了大家就会观察到Activity本身提供的7个有关于生命周期的回调方法全是用protected关键字声明的,这就意味着<strong>这些回调方法并不是给开发者主动调用的一种声明(其他类并不可直接调用这些回调函数),开发者需要做的是将这些回调方法的实现完成之后,由系统去调用你实现的函数.</strong>  </p>
 </blockquote>
