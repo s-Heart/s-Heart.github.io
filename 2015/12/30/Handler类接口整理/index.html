@@ -4,18 +4,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>java collection Framework | tony&#39;s blog</title>
+  <title>tony&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Collection|-List|  |-LinkedList|  |-ArrayList|  |-Vector|  |-Stack|_SetMap|-Hashtable|-HashMap|-WeakHashMap">
+  <meta name="description" content="title: Handler类接口整理date: 2015-12-30 16:35:29  
+tags: [android,api]obtainMessage接口&quot;&amp;gt;obtainMessage接口允许你在发送消息时直接从全局消息池方便的返回一个Message实例,而不用再去创建一个实例.123456789/** * Returns a new &amp;#123;@link android.os.Mess">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java collection Framework">
-<meta property="og:url" content="http://shishaojie.site/2015/12/14/java collection framework/index.html">
+<meta property="og:title" content="tony's blog">
+<meta property="og:url" content="http://shishaojie.site/2015/12/30/Handler类接口整理/index.html">
 <meta property="og:site_name" content="tony's blog">
-<meta property="og:description" content="Collection|-List|  |-LinkedList|  |-ArrayList|  |-Vector|  |-Stack|_SetMap|-Hashtable|-HashMap|-WeakHashMap">
-<meta property="og:updated_time" content="2015-12-14T08:59:07.012Z">
+<meta property="og:description" content="title: Handler类接口整理date: 2015-12-30 16:35:29  
+tags: [android,api]obtainMessage接口&quot;&amp;gt;obtainMessage接口允许你在发送消息时直接从全局消息池方便的返回一个Message实例,而不用再去创建一个实例.123456789/** * Returns a new &amp;#123;@link android.os.Mess">
+<meta property="og:updated_time" content="2015-12-30T09:00:32.258Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java collection Framework">
-<meta name="twitter:description" content="Collection|-List|  |-LinkedList|  |-ArrayList|  |-Vector|  |-Stack|_SetMap|-Hashtable|-HashMap|-WeakHashMap">
+<meta name="twitter:title" content="tony's blog">
+<meta name="twitter:description" content="title: Handler类接口整理date: 2015-12-30 16:35:29  
+tags: [android,api]obtainMessage接口&quot;&amp;gt;obtainMessage接口允许你在发送消息时直接从全局消息池方便的返回一个Message实例,而不用再去创建一个实例.123456789/** * Returns a new &amp;#123;@link android.os.Mess">
   
     <link rel="alternative" href="/atom.xml" title="tony&#39;s blog" type="application/atom+xml">
   
@@ -72,63 +75,45 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main"><article id="post-java collection framework" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-Handler类接口整理" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/12/14/java collection framework/" class="article-date">
-  <time datetime="2015-12-14T08:57:36.000Z" itemprop="datePublished">2015-12-14</time>
+    <a href="/2015/12/30/Handler类接口整理/" class="article-date">
+  <time datetime="2015-12-30T09:00:32.258Z" itemprop="datePublished">2015-12-30</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      java collection Framework
-    </h1>
-  
-
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Collection<br>|-List<br>|  |-LinkedList<br>|  |-ArrayList<br>|  |-Vector<br>|  |-Stack<br>|_Set<br>Map<br>|-Hashtable<br>|-HashMap<br>|-WeakHashMap</p>
+        <p>title: Handler类接口整理<br>date: 2015-12-30 16:35:29  </p>
+<h2 id="tags_3A__5Bandroid_2Capi_5D"><a href="#tags_3A__5Bandroid_2Capi_5D" class="headerlink" title="tags: [android,api]"></a>tags: [android,api]</h2><h3 id="obtainMessage_u63A5_u53E3"><a href="#obtainMessage_u63A5_u53E3" class="headerlink" title="<code>obtainMessage</code>接口"></a><code>obtainMessage</code>接口</h3><p>允许你在发送消息时直接从全局消息池方便的返回一个Message实例,而不用再去创建一个实例.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Returns a new &#123;<span class="doctag">@link</span> android.os.Message Message&#125; from the global message pool. More efficient than</span><br><span class="line"> * creating and allocating new instances. The retrieved message has its handler set to this instance (Message.target == this).</span><br><span class="line"> *  If you don't want that facility, just call Message.obtain() instead.</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> Message <span class="title">obtainMessage</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Message.obtain(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h3 id="post_28Runnable_r_29_u63A5_u53E3"><a href="#post_28Runnable_r_29_u63A5_u53E3" class="headerlink" title="<code>post(Runnable r)</code>接口"></a><code>post(Runnable r)</code>接口</h3><p>将一个Runnable实例添加到消息队列中,这个runnable实例所运行的线程决定于Handler实例创建的线程.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Causes the Runnable r to be added to the message queue.</span><br><span class="line"> * The runnable will be run on the thread to which this handler is </span><br><span class="line"> * attached. </span><br><span class="line"> *  </span><br><span class="line"> * <span class="doctag">@param</span> r The Runnable that will be executed.</span><br><span class="line"> * </span><br><span class="line"> * <span class="doctag">@return</span> Returns true if the Runnable was successfully placed in to the </span><br><span class="line"> *         message queue.  Returns false on failure, usually because the</span><br><span class="line"> *         looper processing the message queue is exiting.</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">boolean</span> <span class="title">post</span><span class="params">(Runnable r)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">   <span class="keyword">return</span>  sendMessageDelayed(getPostMessage(r), <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://shishaojie.site/2015/12/14/java collection framework/" data-id="ciih81hd0000360duumypdl32" class="article-share-link" data-share="baidu" data-title="java collection Framework">分享到</a>
+        <a data-url="http://shishaojie.site/2015/12/30/Handler类接口整理/" data-id="ciislfna40000u0durwrphy8m" class="article-share-link" data-share="baidu" data-title="">分享到</a>
       
 
       
-        <a href="http://shishaojie.site/2015/12/14/java collection framework/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://shishaojie.site/2015/12/30/Handler类接口整理/#ds-thread" class="article-comment-link">评论</a>
       
 
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/framework/">framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
-
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2015/12/22/多线程简介/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">
-        
-          多线程概念介绍
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/12/14/GIT全局配置与本地配置技巧/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/12/26/java编程思想-封装/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">GIT全局配置与本地配置技巧</div>
+      <div class="article-nav-title">java编程思想-封装</div>
     </a>
   
 </nav>
@@ -138,7 +123,7 @@
 
 
   <section id="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="2015/12/14/java collection framework/" data-title="java collection Framework" data-url="http://shishaojie.site/2015/12/14/java collection framework/"></div>
+    <div id="ds-thread" class="ds-thread" data-thread-key="2015/12/30/Handler类接口整理/" data-title="" data-url="http://shishaojie.site/2015/12/30/Handler类接口整理/"></div>
   </section>
 </section>
       
