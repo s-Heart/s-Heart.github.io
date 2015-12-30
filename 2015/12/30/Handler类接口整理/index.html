@@ -4,21 +4,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>tony&#39;s blog</title>
+  <title>Handler类接口整理 | tony&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: Handler类接口整理date: 2015-12-30 16:35:29  
-tags: [android,api]  obtainMessage接口&quot;&amp;gt;obtainMessage接口允许你在发送消息时直接从全局消息池方便的返回一个Message实例,而不用再去创建一个实例.123456789/** * Returns a new &amp;#123;@link android.os.Me">
+  <meta name="description" content="obtainMessage接口&quot;&amp;gt;obtainMessage接口允许你在发送消息时直接从全局消息池方便的返回一个Message实例,而不用再去创建一个实例.123456789/** * Returns a new &amp;#123;@link android.os.Message Message&amp;#125; from the global message pool. More efficient tha">
 <meta property="og:type" content="article">
-<meta property="og:title" content="tony's blog">
+<meta property="og:title" content="Handler类接口整理">
 <meta property="og:url" content="http://shishaojie.site/2015/12/30/Handler类接口整理/index.html">
 <meta property="og:site_name" content="tony's blog">
-<meta property="og:description" content="title: Handler类接口整理date: 2015-12-30 16:35:29  
-tags: [android,api]  obtainMessage接口&quot;&amp;gt;obtainMessage接口允许你在发送消息时直接从全局消息池方便的返回一个Message实例,而不用再去创建一个实例.123456789/** * Returns a new &amp;#123;@link android.os.Me">
-<meta property="og:updated_time" content="2015-12-30T09:02:49.871Z">
+<meta property="og:description" content="obtainMessage接口&quot;&amp;gt;obtainMessage接口允许你在发送消息时直接从全局消息池方便的返回一个Message实例,而不用再去创建一个实例.123456789/** * Returns a new &amp;#123;@link android.os.Message Message&amp;#125; from the global message pool. More efficient tha">
+<meta property="og:updated_time" content="2015-12-30T09:04:15.293Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tony's blog">
-<meta name="twitter:description" content="title: Handler类接口整理date: 2015-12-30 16:35:29  
-tags: [android,api]  obtainMessage接口&quot;&amp;gt;obtainMessage接口允许你在发送消息时直接从全局消息池方便的返回一个Message实例,而不用再去创建一个实例.123456789/** * Returns a new &amp;#123;@link android.os.Me">
+<meta name="twitter:title" content="Handler类接口整理">
+<meta name="twitter:description" content="obtainMessage接口&quot;&amp;gt;obtainMessage接口允许你在发送消息时直接从全局消息池方便的返回一个Message实例,而不用再去创建一个实例.123456789/** * Returns a new &amp;#123;@link android.os.Message Message&amp;#125; from the global message pool. More efficient tha">
   
     <link rel="alternative" href="/atom.xml" title="tony&#39;s blog" type="application/atom+xml">
   
@@ -78,17 +75,26 @@ tags: [android,api]  obtainMessage接口&quot;&amp;gt;obtainMessage接口允许�
       <section id="main"><article id="post-Handler类接口整理" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/12/30/Handler类接口整理/" class="article-date">
-  <time datetime="2015-12-30T09:02:49.871Z" itemprop="datePublished">2015-12-30</time>
+  <time datetime="2015-12-30T08:35:29.000Z" itemprop="datePublished">2015-12-30</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Handler类接口整理
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: Handler类接口整理<br>date: 2015-12-30 16:35:29  </p>
-<h2 id="tags_3A__5Bandroid_2Capi_5D"><a href="#tags_3A__5Bandroid_2Capi_5D" class="headerlink" title="tags: [android,api]  "></a>tags: [android,api]  </h2><h3 id="obtainMessage_u63A5_u53E3"><a href="#obtainMessage_u63A5_u53E3" class="headerlink" title="<code>obtainMessage</code>接口"></a><code>obtainMessage</code>接口</h3><p>允许你在发送消息时直接从全局消息池方便的返回一个Message实例,而不用再去创建一个实例.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Returns a new &#123;<span class="doctag">@link</span> android.os.Message Message&#125; from the global message pool. More efficient than</span><br><span class="line"> * creating and allocating new instances. The retrieved message has its handler set to this instance (Message.target == this).</span><br><span class="line"> *  If you don't want that facility, just call Message.obtain() instead.</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> Message <span class="title">obtainMessage</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Message.obtain(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h3 id="obtainMessage_u63A5_u53E3"><a href="#obtainMessage_u63A5_u53E3" class="headerlink" title="<code>obtainMessage</code>接口"></a><code>obtainMessage</code>接口</h3><p>允许你在发送消息时直接从全局消息池方便的返回一个Message实例,而不用再去创建一个实例.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Returns a new &#123;<span class="doctag">@link</span> android.os.Message Message&#125; from the global message pool. More efficient than</span><br><span class="line"> * creating and allocating new instances. The retrieved message has its handler set to this instance (Message.target == this).</span><br><span class="line"> *  If you don't want that facility, just call Message.obtain() instead.</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> Message <span class="title">obtainMessage</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Message.obtain(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <h3 id="post_28Runnable_r_29_u63A5_u53E3"><a href="#post_28Runnable_r_29_u63A5_u53E3" class="headerlink" title="<code>post(Runnable r)</code>接口"></a><code>post(Runnable r)</code>接口</h3><p>将一个Runnable实例添加到消息队列中,这个runnable实例所运行的线程决定于Handler实例创建的线程.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Causes the Runnable r to be added to the message queue.</span><br><span class="line"> * The runnable will be run on the thread to which this handler is </span><br><span class="line"> * attached. </span><br><span class="line"> *  </span><br><span class="line"> * <span class="doctag">@param</span> r The Runnable that will be executed.</span><br><span class="line"> * </span><br><span class="line"> * <span class="doctag">@return</span> Returns true if the Runnable was successfully placed in to the </span><br><span class="line"> *         message queue.  Returns false on failure, usually because the</span><br><span class="line"> *         looper processing the message queue is exiting.</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">boolean</span> <span class="title">post</span><span class="params">(Runnable r)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">   <span class="keyword">return</span>  sendMessageDelayed(getPostMessage(r), <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
@@ -96,7 +102,7 @@ tags: [android,api]  obtainMessage接口&quot;&amp;gt;obtainMessage接口允许�
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://shishaojie.site/2015/12/30/Handler类接口整理/" data-id="ciislfna40000u0durwrphy8m" class="article-share-link" data-share="baidu" data-title="">分享到</a>
+        <a data-url="http://shishaojie.site/2015/12/30/Handler类接口整理/" data-id="ciislfna40000u0durwrphy8m" class="article-share-link" data-share="baidu" data-title="Handler类接口整理">分享到</a>
       
 
       
@@ -104,6 +110,8 @@ tags: [android,api]  obtainMessage接口&quot;&amp;gt;obtainMessage接口允许�
       
 
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/api/">api</a></li></ul>
+
     </footer>
   </div>
   
@@ -123,7 +131,7 @@ tags: [android,api]  obtainMessage接口&quot;&amp;gt;obtainMessage接口允许�
 
 
   <section id="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="2015/12/30/Handler类接口整理/" data-title="" data-url="http://shishaojie.site/2015/12/30/Handler类接口整理/"></div>
+    <div id="ds-thread" class="ds-thread" data-thread-key="2015/12/30/Handler类接口整理/" data-title="Handler类接口整理" data-url="http://shishaojie.site/2015/12/30/Handler类接口整理/"></div>
   </section>
 </section>
       
@@ -135,7 +143,7 @@ tags: [android,api]  obtainMessage接口&quot;&amp;gt;obtainMessage接口允许�
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/">android</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/framework/">framework</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程/">多线程</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发效率/">开发效率</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/">android</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/api/">api</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/framework/">framework</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程/">多线程</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发效率/">开发效率</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -144,7 +152,7 @@ tags: [android,api]  obtainMessage接口&quot;&amp;gt;obtainMessage接口允许�
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/android/" style="font-size: 15px;">android</a> <a href="/tags/framework/" style="font-size: 10px;">framework</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/多线程/" style="font-size: 20px;">多线程</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
+      <a href="/tags/android/" style="font-size: 20px;">android</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/framework/" style="font-size: 10px;">framework</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/多线程/" style="font-size: 20px;">多线程</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
     </div>
   </div>
 
@@ -165,7 +173,7 @@ tags: [android,api]  obtainMessage接口&quot;&amp;gt;obtainMessage接口允许�
       <ul>
         
           <li>
-            <a href="/2015/12/30/Handler类接口整理/">(no title)</a>
+            <a href="/2015/12/30/Handler类接口整理/">Handler类接口整理</a>
           </li>
         
           <li>
